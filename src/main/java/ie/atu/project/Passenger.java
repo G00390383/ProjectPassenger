@@ -59,7 +59,12 @@ public class Passenger {
     }
 
     public void setPhone(long phone) {
-        this.phone = phone;
+        if(String.valueOf(phone).length() >= 7){
+            this.phone = phone;
+        }
+        else{
+            throw new IllegalArgumentException("This is not a valid phone number");
+        }
     }
 
     public int getAge() {
