@@ -72,7 +72,12 @@ public class Passenger {
     }
 
     public void setAge(int age) {
-        this.age = age;
+        if(age >= 16){
+            this.age = age;
+        }
+        else{
+            throw new IllegalArgumentException("You Are too Young");
+        }
     }
 
     public static void main(String[] args) {
