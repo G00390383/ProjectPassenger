@@ -19,8 +19,13 @@ public class Passenger {
         return title;
     }
 
-    public void setTitle(String title) {
-        this.title = title;
+    public void setTitle(String thisTitle) {
+        if("Mr".equalsIgnoreCase(thisTitle) || "Mrs".equalsIgnoreCase(thisTitle) || "Ms".equalsIgnoreCase(thisTitle)){
+            this.title = thisTitle;
+        }
+        else {
+            throw new IllegalArgumentException("This is not a valid title");
+        }
     }
 
     public String getName() {
