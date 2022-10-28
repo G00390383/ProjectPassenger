@@ -33,7 +33,12 @@ public class Passenger {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if(name.length() > 3){
+            this.name = name;
+        }
+        else{
+            throw new IllegalArgumentException("This is not a valid name");
+        }
     }
 
     public long getId() {
