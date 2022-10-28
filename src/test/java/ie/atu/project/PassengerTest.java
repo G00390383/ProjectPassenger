@@ -36,6 +36,18 @@ class PassengerTest {
         assertEquals("This is not a valid name", exMessage.getMessage());
     }
 
+    @Test
+    void testIdPass(){
+        Passenger myPassenger = new Passenger("Mr", "Darragh", 1232334567891L, 1233456789, 123);
+        assertEquals(1232334567891L, myPassenger.getId());
+    }
+
+    @Test
+    void testIdFail(){
+        Exception exMessage = assertThrows(IllegalArgumentException.class, () -> {new Passenger("Mr", "Darragh", 123542, 1222222223, 19);});
+        assertEquals("This is not a valid ID", exMessage.getMessage());
+    }
+
     @AfterEach
     void tearDown() {
     }

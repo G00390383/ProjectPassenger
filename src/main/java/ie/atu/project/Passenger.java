@@ -46,7 +46,12 @@ public class Passenger {
     }
 
     public void setId(long id) {
-        this.id = id;
+        if(String.valueOf(id).length() >= 10){
+            this.id = id;
+        }
+        else{
+            throw new IllegalArgumentException("This is not a valid ID");
+        }
     }
 
     public long getPhone() {
